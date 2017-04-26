@@ -1,0 +1,53 @@
+.search-bar {
+    margin: 20px;
+    text-align: center;
+}
+
+.search-bar input {
+    width: 75%;
+}
+
+.show-item img {
+    max-width: 64px;
+}
+
+.show-detail {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background-color: #eee;
+}
+
+.showImg {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px;
+}
+
+.showImg-detail {
+    max-width: 250px;
+    max-height: 250px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.summary {
+    text-align: center;
+}
+
+.centered-table {
+    margin: auto;
+}
+
+.favorites-section {
+    text-align: center;
+    margin-top: 20px;
+}
