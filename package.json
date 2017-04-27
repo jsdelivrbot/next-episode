@@ -5,10 +5,10 @@
   "main": "index.js",
   "repository": "git@github.com:tomshudev/next-episode.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch",
-    "compile": "eslint . --ignore-pattern=.gitignore"
+    /**"test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test:watch": "npm run test -- --watch",*/
+    "compile": "eslint . --ignore-pattern=.gitignore",
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
   "author": "",
   "license": "ISC",
