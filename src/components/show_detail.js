@@ -2,7 +2,7 @@ import React from 'react';
 
 const ShowDetail = ({show, nextepisode, poster, isShowCanceled}) => {
     if (!show) {
-        return <div className="show-detail col-md-6">Select a show</div>
+        return (<div className="show-detail col-md-6">Select a show</div>);
     }
 
     console.log(show);
@@ -82,6 +82,6 @@ const ShowDetail = ({show, nextepisode, poster, isShowCanceled}) => {
             </div>
         </div>
     );
-}
+};
 
 export default ShowDetail;
