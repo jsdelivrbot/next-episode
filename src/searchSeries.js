@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import theMovieDb from 'themoviedb-javascript-library';
 
 const CANCELED = 'Canceled';
@@ -13,7 +12,7 @@ class SearchSeries {
             callback(JSON.parse(res).results.slice(0,5));
         }), (err => {
             console.log(err);
-        }))
+        }));
     }
 
     findDataById(id, callback) {

@@ -14,6 +14,6 @@ const ShowsList = (props) => {
             {showItems}
         </ul>
     );
-}
+};
 
 export default ShowsList;

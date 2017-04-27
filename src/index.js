@@ -5,7 +5,7 @@ import SearchBar from './components/search_bar';
 import ShowsList from './components/shows_list';
 import ShowDetail from './components/show_detail';
 const API_KEY = 'AIzaSyCmaEVnHC6BU6u5uDiyVNAuYh8ixud_qK0';
-const searchSeries = require('./searchSeries.js');
+import searchSeries from './searchSeries.js';
 
 class App extends Component {
     constructor(props) {
@@ -47,8 +47,8 @@ class App extends Component {
     }
 
     render() {
-        const showSearch = _.debounce((term) => { this.showSearch(term) }, 300);
-        const showSelected = _.debounce((selectedShow) => { this.showSelected(selectedShow) }, 0)
+        const showSearch = _.debounce((term) => { this.showSearch(term); }, 300);
+        const showSelected = _.debounce((selectedShow) => { this.showSelected(selectedShow); }, 0);
 
         return (
             <div>
