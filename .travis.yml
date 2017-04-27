@@ -3,4 +3,4 @@ node_js:
   - "7"
 clone: checkout scm
 install: npm install
-compile: npm run compile
+script: npm run compile
