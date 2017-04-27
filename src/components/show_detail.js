@@ -82,6 +82,6 @@ const ShowDetail = ({show, nextepisode, poster, isShowCanceled}) => {
             </div>
         </div>
     );
-}
+};
 
 export default ShowDetail;
