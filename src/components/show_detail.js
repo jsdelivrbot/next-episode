@@ -42,13 +42,13 @@ const ShowDetail = ({show, nextepisode, poster, isShowCanceled, onShowSelect}) =
         FavoritesUtil.addToFavorites(show.id);
         isFavorite = true;
         onShowSelect(show);
-    }
+    };
 
     var removeFromFavorites = function() {
         FavoritesUtil.removeFromFavorites(show.id);
         isFavorite = false;
         onShowSelect(show);
-    }
+    };
 
     return (
         <div className="show-detail col-md-6">
