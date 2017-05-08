@@ -1,5 +1,5 @@
 import React from 'react';
-const FavoritesUtil = require('../utils/favorites.js');
+import FavoritesUtil from '../utils/favorites.js';
 
 const ShowDetail = ({show, nextepisode, poster, isShowCanceled, onShowSelect}) => {
     if (!show) {
