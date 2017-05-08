@@ -1,6 +1,7 @@
 import React from 'react';
+import FavoritesUtil from '../utils/favorites.js';
 
-const ShowDetail = ({show, nextepisode, poster, isShowCanceled}) => {
+const ShowDetail = ({show, nextepisode, poster, isShowCanceled, onShowSelect}) => {
     if (!show) {
         return (<div className="show-detail col-md-6">Select a show</div>);
     }
@@ -8,6 +9,8 @@ const ShowDetail = ({show, nextepisode, poster, isShowCanceled}) => {
     console.log(show);
 
     let isVisible = false;
+    let isFavorite = FavoritesUtil.isFavorite(show.id);
+    console.log(isFavorite);
     isShowCanceled = isShowCanceled === undefined ? true : isShowCanceled;
 
     if (nextepisode != null) {
@@ -17,9 +20,7 @@ const ShowDetail = ({show, nextepisode, poster, isShowCanceled}) => {
         isVisible = nextepisodeDate > now;
     }
 
-    let imgUrl = '';
-    let summary = '';
-    let showSummary = '';
+    let imgUrl, summary, showSummary = '';
 
     if (poster) {
         imgUrl = `http://image.tmdb.org/t/p/w500/` + poster;
@@ -36,6 +37,18 @@ const ShowDetail = ({show, nextepisode, poster, isShowCanceled}) => {
             summary = `We don't have summary for ${nextepisode.name} yet.`;
         }
     }
+
+    var addToFavorites = function() {
+        FavoritesUtil.addToFavorites(show.id);
+        isFavorite = true;
+        onShowSelect(show);
+    };
+
+    var removeFromFavorites = function() {
+        FavoritesUtil.removeFromFavorites(show.id);
+        isFavorite = false;
+        onShowSelect(show);
+    };
 
     return (
         <div className="show-detail col-md-6">
@@ -75,8 +88,9 @@ const ShowDetail = ({show, nextepisode, poster, isShowCanceled}) => {
             </div>
             <div className="row">
                 <div className="col-md-12 favorites-section">
-                    {!isShowCanceled &&
-                        <div className="btn btn-primary">Add to Favorites</div>
+                    {!isShowCanceled && 
+                        (isFavorite ? <div className="btn btn-danger" onClick={() => removeFromFavorites()}>Remove from Favorites</div>
+                            : <div className="btn btn-primary" onClick={() => addToFavorites()}>Add to Favorites</div>)
                     }
                 </div>
             </div>

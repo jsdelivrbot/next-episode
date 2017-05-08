@@ -6,6 +6,7 @@ import ShowsList from './components/shows_list';
 import ShowDetail from './components/show_detail';
 const API_KEY = 'AIzaSyCmaEVnHC6BU6u5uDiyVNAuYh8ixud_qK0';
 import searchSeries from './searchSeries.js';
+import favoritesUtil from './utils/favorites.js';
 
 class App extends Component {
     constructor(props) {
@@ -53,7 +54,7 @@ class App extends Component {
         return (
             <div>
                 <SearchBar onSearchTermChange={ showSearch } />
-                <ShowDetail show={ this.state.selectedShow } nextepisode={ this.state.nextepisode } poster={ this.state.currImg } isShowCanceled={ this.state.isShowCanceled } />
+                <ShowDetail show={ this.state.selectedShow } nextepisode={ this.state.nextepisode } poster={ this.state.currImg } isShowCanceled={ this.state.isShowCanceled } onShowSelect={ showSelected } />
                 <ShowsList 
                     onShowSelect={ showSelected }
                     shows={ this.state.shows } /> 
